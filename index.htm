@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="sv">
     <head>
+        <title> Datorföreningen Stacken </title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1,
@@ -14,8 +15,7 @@
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
         integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd"
         crossorigin="anonymous">
-
-
+        <link rel="stylesheet" href="open-iconic-bootstrap.css">
         <link href="stacken-templ.css" rel="stylesheet">
     </head>
     <body>
@@ -29,11 +29,43 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Poängtavla</a>
+                            <a class="nav-link" href="#">
+                                Om Stacken
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Kalender
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                            data-toggle="dropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false" href="#">Poängtavla</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item"> ???? </a>
+                                <a class="dropdown-item"> !!!! </a>
+                            </div>
+
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"  href="#">Rösta ut en medlem</a>
                         </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/stacken">
+                        Github
+                        <span class="oi oi-code"></span> 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/stacken">
+                        Wiki
+                        <span class="oi oi-info"></span> 
+                    </a>
+                </li>
+
             </ul>
         </nav>
 
@@ -55,7 +87,10 @@
             <div class="row">
                 <div class="col-md-4">
                     <h2> Rubrik 1</h2>
-                    <p class="muted"> 
+                    <time datetime="14 February 2016" class="muted">
+                        <span class="oi oi-calendar"></span>
+                        14 February 2016</time>
+                    <p> 
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Morbi molestie erat nec ligula hendrerit placerat. Nulla et
                     mauris tincidunt, luctus erat sed, condimentum dui. Sed sit
@@ -68,6 +103,9 @@
                 </div>
                 <div class="col-md-4">
                     <h2> Rubrik 2</h2>
+                    <time datetime="11 February 2016" class="muted">
+                        <span class="oi oi-calendar"></span>
+                        11 February 2016</time>
                     <p> 
                         Maecenas faucibus mi a risus dignissim, vel congue sem
                         sagittis. Sed finibus vel nisi feugiat elementum. Fusce
@@ -82,6 +120,9 @@
                 </div>
                 <div class="col-md-4">
                     <h2> Rubrik 3</h2>
+                    <time datetime="2 February 2016" class="muted">
+                        <span class="oi oi-calendar"></span>
+                        2 February 2016</time>
                     <p> 
                     Donec sed venenatis odio. Etiam eu est gravida, elementum
                     turpis fringilla, sagittis risus. Ut facilisis nisi leo, id
@@ -94,7 +135,8 @@
             </div>
             <hr>
             <footer>
-                <p>&copy; Stacken 2016</p>
+                <p>&copy; Stacken 2016, Powered by Bootstrap, Open Iconic and (in the
+                future) Hugo</p>
             </footer>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

@@ -2,6 +2,14 @@ body {
     padding-top: 3rem;
 }
 
+.muted {
+    color: #AAAAAA;
+}
+
+.navbar-right {
+    float: right;
+}
+
 #stacken {
     background: url('Stacken2-80x40-trans.png');
     width: 80px;
