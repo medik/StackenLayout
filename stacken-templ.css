@@ -1,0 +1,9 @@
+body {
+    padding-top: 3rem;
+}
+
+#stacken {
+    background: url('Stacken2-80x40-trans.png');
+    width: 80px;
+    height: 40px;
+}
