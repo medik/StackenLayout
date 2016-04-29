@@ -11,7 +11,7 @@ body {
 }
 
 #stacken {
-    background: url('Stacken2-80x40-trans.png');
+    background: url('../img/Stacken2-80x40-trans.png');
     width: 80px;
     height: 40px;
 }
