@@ -1,0 +1,11 @@
+name = "StackenLayout"
+license = "TBA"
+description = "Förslag på layout till Stackens hemsida"
+homepage = "//github.com/stacken/StackenLayout"
+tags = ["Stacken","Torsdag"]
+min_version = 0.1
+
+[author]
+    name = "Olof <medik> Sjödin"
+    homepage = "//medik.se"
+

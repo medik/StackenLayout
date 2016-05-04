@@ -1,0 +1,8 @@
+baseurl = "/"
+theme = "StackenLayout"
+languageCode = "sv-SE"
+title = "Datorföreningen Stacken"
+author = "Olof"
+
+[params]
+    description = "En testbeskrivning"

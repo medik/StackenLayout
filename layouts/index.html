@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <title> {{ .Site.Title }}</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+        
+        <meta name="description" content="{{ .Site.Params.description }}">
+        <meta name="author" content="{{ .Site.Params.author }}">
+
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
+        integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="css/open-iconic-bootstrap.css">
+        <link rel="stylesheet" href="css/stacken-templ.css">
+    </head>
+    <body>
+        {{ "<!-- Navigation -->" | safeHTML }}
+        <nav class="navbar navbar-fixed-top navbar-dark bg-faded"
+        style="background-color: #111111;">
+            <a id="stacken" class="navbar-brand" href="#"></a>
+            <ul class="nav navbar-nav">
+                {{ $currentNode := . }}
+                {{ range .Site.Menus.main }}
+                    {{ if .HasChildren }}
+                    <li class="nav-item dropdown{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}">
+                        <a class="nav-link dropdown-toggle" 
+                            href="{{ .URL }}" data-toggle="dropdown"
+                            role="button" aria-haspopup="true"
+                                          aria-expanded="false"> {{ .Name }}
+                        </a>
+                        <span class="sr-only">(current)</span>
+                        <div class="dropdown-menu">
+                            {{ range .Children }}
+                            <a href="{{.URL}}" class="dropdown-item{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}">
+                            {{ .Name }} 
+                            </a>
+                            {{ end }}
+                        </div>
+                    </li>
+                    {{ else }}
+                    <li class="nav-item{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}">
+                        <a class="nav-link" href="{{ .URL }}"> {{ .Name }} </a>
+                    </li>
+                    {{ end }}
+                {{ end }}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/stacken">
+                        Github
+                        <span class="oi oi-code"></span> 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/stacken">
+                        Wiki
+                        <span class="oi oi-info"></span> 
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-1">Stacken</h1>
+                <p> Stacken är en datorförening för studenter och anställda
+                vid KTH. Föreningens syfte är att främja intreset för och vidga
+                kunskaper inom datorområdet.</p>
+                <p> <a class="btn btn-primary btn-lg" href="#" role="button"> Bli medlem &raquo;</a>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">
+                        Kommande föreläsningar &raquo; </a>
+
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2> Rubrik 1</h2>
+                    <time datetime="14 February 2016" class="muted">
+                        <span class="oi oi-calendar"></span>
+                        14 February 2016</time>
+                    <p> 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Morbi molestie erat nec ligula hendrerit placerat. Nulla et
+                    mauris tincidunt, luctus erat sed, condimentum dui. Sed sit
+                    amet mattis neque. Donec lorem nisi, fermentum sed diam
+                    eget, egestas dignissim nibh. Aliquam vestibulum nec felis
+                    id scelerisque.
+                    </p>
+                    <p><a class="btn btn-secondary" href="#" role="button">View
+                        details &raquo;</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h2> Rubrik 2</h2>
+                    <time datetime="11 February 2016" class="muted">
+                        <span class="oi oi-calendar"></span>
+                        11 February 2016</time>
+                    <p> 
+                        Maecenas faucibus mi a risus dignissim, vel congue sem
+                        sagittis. Sed finibus vel nisi feugiat elementum. Fusce
+                        fermentum ut turpis eget euismod. Donec nibh sem,
+                        commodo at maximus id, maximus eget ante. Aenean sed
+                        tincidunt eros, non congue felis. Nam placerat augue a
+                        mi consectetur sollicitudin. Mauris ex quam, ultrices
+                        non est eu, euismod sodales lorem.
+                    </p>
+                    <p><a class="btn btn-secondary" href="#" role="button">View
+                        details &raquo;</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h2> Rubrik 3</h2>
+                    <time datetime="2 February 2016" class="muted">
+                        <span class="oi oi-calendar"></span>
+                        2 February 2016</time>
+                    <p> 
+                    Donec sed venenatis odio. Etiam eu est gravida, elementum
+                    turpis fringilla, sagittis risus. Ut facilisis nisi leo, id
+                    convallis leo viverra nec. Phasellus auctor tempus tempor.
+                    Pellentesque euismod metus vel euismod ornare.
+                    </p>
+                    <p><a class="btn btn-secondary" href="#" role="button">View
+                        details &raquo;</a></p>
+                </div>
+            </div>
+            <hr>
+            <footer>
+                <p>&copy; Stacken 2016, Powered by Bootstrap, Open Iconic and (in the
+                future) Hugo</p>
+            </footer>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"
+                integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
+                crossorigin="anonymous"></script>
+    </body>
+</html>
