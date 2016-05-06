@@ -1,0 +1,46 @@
+{{ "<!-- Navigation -->" | safeHTML }}
+<nav class="navbar navbar-fixed-top navbar-dark bg-faded"
+style="background-color: #111111;">
+    <a id="stacken" class="navbar-brand" href="#"></a>
+    <ul class="nav navbar-nav">
+        {{ $currentNode := . }}
+        {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+            <li class="nav-item dropdown{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}">
+                <a class="nav-link dropdown-toggle" 
+                    href="{{ .URL }}" data-toggle="dropdown"
+                    role="button" aria-haspopup="true"
+                                  aria-expanded="false"> {{ .Name }}
+                </a>
+                <span class="sr-only">(current)</span>
+                <div class="dropdown-menu">
+                    {{ range .Children }}
+                    <a href="{{.URL}}" class="dropdown-item{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}">
+                    {{ .Name }} 
+                    </a>
+                    {{ end }}
+                </div>
+            </li>
+            {{ else }}
+            <li class="nav-item{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}">
+                <a class="nav-link" href="{{ .URL }}"> {{ .Name }} </a>
+            </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/stacken">
+                Github
+                <span class="oi oi-code"></span> 
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/stacken">
+                Wiki
+                <span class="oi oi-info"></span> 
+            </a>
+        </li>
+
+    </ul>
+</nav>
